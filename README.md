@@ -12,8 +12,16 @@ npm install
 
 ## Usage
 
+For a web based version run:
+
 ```sh
 npm run start
+```
+
+For a desktop version run:
+
+```sh
+npm run start:electron
 ```
 
 ## Author
