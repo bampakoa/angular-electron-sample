@@ -11,7 +11,7 @@ module.exports = {
   },
   "entry": {
     "main": [
-      "./src\\electron\\main.ts"
+      path.join(process.cwd(), "src", "electron", "main.ts")
     ]
   },
   "output": {
