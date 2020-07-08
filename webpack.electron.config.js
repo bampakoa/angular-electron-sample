@@ -1,45 +1,34 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
+const { NoEmitOnErrorsPlugin, ProgressPlugin } = require('webpack');
 
 module.exports = {
-  "mode": "development",
-  "devtool": "source-map",
   "resolve": {
     "extensions": [
-      ".ts"
+      ".ts",
+      ".js"
     ]
   },
   "entry": {
-    "main": [
-      path.join(process.cwd(), "src", "electron", "main.ts")
-    ]
-  },
-  "output": {
-    "path": path.join(process.cwd(), "dist", "angular-electron-sample"),
-    "filename": "shell.js",
-    "devtoolModuleFilenameTemplate": "[absolute-resource-path]"
+    "main": path.join(process.cwd(), "src", "electron", "main.ts")
   },
   "module": {
     "rules": [
       {
         "test": /\.ts$/,
-        "loader": "awesome-typescript-loader",
+        "loader": "ts-loader",
         "options": {
-          configFileName: './tsconfig.electron.json'
+          configFile: 'tsconfig.electron.json'
         }
       }
     ]
   },
+  "plugins": [
+    new NoEmitOnErrorsPlugin(),
+    new ProgressPlugin()
+  ],
   "node": {
-    "fs": "empty",
-    "global": true,
-    "crypto": "empty",
-    "tls": "empty",
-    "net": "empty",
-    "process": true,
-    "module": false,
-    "clearImmediate": false,
-    "setImmediate": false,
+    "fs": false,
     "__dirname": false
   },
   "target": "electron-main",

@@ -1,9 +1,9 @@
 {
-  "extends": "./tsconfig.json",
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "importHelpers": false
   },
-  "files": [
+  "include": [
     "src/electron/**/*.ts"
   ]
 }
