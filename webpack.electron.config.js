@@ -18,7 +18,7 @@ module.exports = {
         "test": /\.ts$/,
         "loader": "ts-loader",
         "options": {
-          configFile: 'tsconfig.electron.json'
+          configFile: path.join(process.cwd(), "src", "electron", "tsconfig.json")
         }
       }
     ]
