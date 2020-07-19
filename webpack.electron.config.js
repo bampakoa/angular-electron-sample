@@ -1,6 +1,7 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
 const { NoEmitOnErrorsPlugin, ProgressPlugin } = require('webpack');
+
+const src = path.join(process.cwd(), "src", "electron");
 
 module.exports = {
   "resolve": {
@@ -10,7 +11,7 @@ module.exports = {
     ]
   },
   "entry": {
-    "main": path.join(process.cwd(), "src", "electron", "main.ts")
+    "main": path.join(src, "main.ts")
   },
   "module": {
     "rules": [
@@ -18,7 +19,7 @@ module.exports = {
         "test": /\.ts$/,
         "loader": "ts-loader",
         "options": {
-          configFile: path.join(process.cwd(), "src", "electron", "tsconfig.json")
+          configFile: path.join(src, "tsconfig.json")
         }
       }
     ]
@@ -31,6 +32,5 @@ module.exports = {
     "fs": false,
     "__dirname": false
   },
-  "target": "electron-main",
-  "externals": [nodeExternals()]
+  "target": "electron-main"
 };

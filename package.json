@@ -9,7 +9,9 @@
     "build:electron": "ng build -c=electron --optimization --outputHashing=all --sourceMap=false --extractCss --namedChunks=false --extractLicenses --vendorChunk=false --buildOptimizer && webpack --config webpack.electron.prod.config.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prepackage": "cd dist/angular-electron-sample && npm install",
+    "package": "electron-packager dist/angular-electron-sample --out=dist --asar"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +35,7 @@
     "@types/node": "^12.11.1",
     "concurrently": "^5.2.0",
     "electron": "^9.1.0",
+    "electron-packager": "15.0.0",
     "ts-loader": "^8.0.1",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

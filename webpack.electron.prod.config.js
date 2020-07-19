@@ -1,6 +1,7 @@
 const path = require('path');
-const baseConfig = require('./webpack.electron.config');
+const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const baseConfig = require('./webpack.electron.config');
 
 module.exports = {
   ...baseConfig,
@@ -18,5 +19,6 @@ module.exports = {
         }
       ]
     })
-  ]
+  ],
+  "externals": [nodeExternals()]
 };
