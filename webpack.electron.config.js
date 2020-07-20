@@ -1,36 +1,36 @@
 const path = require('path');
 const { NoEmitOnErrorsPlugin, ProgressPlugin } = require('webpack');
 
-const src = path.join(process.cwd(), "src", "electron");
+const src = path.join(process.cwd(), 'src', 'electron');
 
 module.exports = {
-  "resolve": {
-    "extensions": [
-      ".ts",
-      ".js"
+  resolve: {
+    extensions: [
+      '.ts',
+      '.js'
     ]
   },
-  "entry": {
-    "main": path.join(src, "main.ts")
+  entry: {
+    main: path.join(src, 'main.ts')
   },
-  "module": {
-    "rules": [
+  module: {
+    rules: [
       {
-        "test": /\.ts$/,
-        "loader": "ts-loader",
-        "options": {
-          configFile: path.join(src, "tsconfig.json")
+        test: /\.ts$/,
+        loader: 'ts-loader',
+        options: {
+          configFile: path.join(src, 'tsconfig.json')
         }
       }
     ]
   },
-  "plugins": [
+  plugins: [
     new NoEmitOnErrorsPlugin(),
     new ProgressPlugin()
   ],
-  "node": {
-    "fs": false,
-    "__dirname": false
+  node: {
+    fs: false,
+    __dirname: false
   },
-  "target": "electron-main"
+  target: 'electron-main'
 };
