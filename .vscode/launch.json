@@ -12,11 +12,7 @@
         "windows": {
           "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
         },
-        "program": "${workspaceRoot}/src/electron/main.ts",
-        "outFiles": [
-          "${workspaceRoot}/dist/angular-electron-sample/shell.js"
-        ],
-        "sourceMaps": true
+        "program": "${workspaceRoot}/dist/angular-electron-sample/shell.js"
       }
     ]
 }
