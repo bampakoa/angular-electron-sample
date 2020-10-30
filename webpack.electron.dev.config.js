@@ -7,6 +7,7 @@ module.exports = {
   devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), 'dist', 'angular-electron-sample'),
+    // avoid conflicts with the `main.js` file generated from the Angular CLI
     filename: 'shell.js'
   }
 };

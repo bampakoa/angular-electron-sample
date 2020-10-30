@@ -1,5 +1,5 @@
 const path = require('path');
-const { NoEmitOnErrorsPlugin, ProgressPlugin } = require('webpack');
+const { ProgressPlugin } = require('webpack');
 
 const src = path.join(process.cwd(), 'src', 'electron');
 
@@ -24,13 +24,17 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    noEmitOnErrors: true
+  },
   plugins: [
-    new NoEmitOnErrorsPlugin(),
     new ProgressPlugin()
   ],
+  // set to false any Node.js globals that we use in the Electron code
   node: {
     fs: false,
     __dirname: false
   },
+  // indicates that transpilation code is to be run in the main process
   target: 'electron-main'
 };
