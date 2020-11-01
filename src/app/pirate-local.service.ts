@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PirateLocalService {
 
   constructor(private electronService: ElectronService) { }
