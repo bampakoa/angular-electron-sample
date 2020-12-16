@@ -5,5 +5,8 @@
     "author": {
       "name": "Aristeidis Bampakos"
     },
-    "main": "main.js"
+    "main": "main.js",
+    "dependencies": {
+      "electron-log": "4.3.1"
+    }
 }

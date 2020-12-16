@@ -23,6 +23,7 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+    "electron-log": "4.3.1",
     "ngx-electron": "^2.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
