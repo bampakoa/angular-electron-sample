@@ -10,4 +10,8 @@ export class PirateService {
     return this.http.get<string[]>('assets/pirates.json').toPromise();
   }
 
+  selectPirate(name: string) {
+    alert('You selected: ' + name);
+  }
+
 }

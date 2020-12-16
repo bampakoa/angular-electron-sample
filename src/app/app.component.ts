@@ -16,6 +16,10 @@ export class AppComponent {
     this.getPirates();
   }
 
+  selectPirate(name: string) {
+    this.pirateService.selectPirate(name);
+  }
+
   private async getPirates() {
     this.pirates = await this.pirateService.getPirates();
   }

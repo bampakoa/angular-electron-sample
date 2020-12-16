@@ -9,5 +9,9 @@ export class PirateLocalService {
   getPirates(): Promise<string[]> {
     return this.electronService.ipcRenderer.invoke('getPirates');
   }
+
+  selectPirate(name: string) {
+    this.electronService.ipcRenderer.sendSync('selectPirate', name);
+  }
   
 }

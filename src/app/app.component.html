@@ -36,7 +36,7 @@
     <p>Here are some pirates:</p>
   
     <div class="card-container">
-      <div class="card card-small" *ngFor="let pirate of pirates">
+      <div class="card card-small" *ngFor="let pirate of pirates" (click)="selectPirate(pirate)">
         <span>{{pirate}}</span>
       </div>
     </div>
