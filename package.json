@@ -11,7 +11,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "prepackage": "cd dist/angular-electron-sample && npm install",
-    "package": "electron-packager dist/angular-electron-sample --out=dist --asar"
+    "package": "electron-packager dist/angular-electron-sample --out=dist --asar",
+    "analyze": "npx  @doyensec/electronegativity -i src/electron"
   },
   "private": true,
   "dependencies": {
