@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:electron": "concurrently \"ng build -c=electron --delete-output-path=false --watch\" \"webpack --config webpack.electron.dev.config.js --watch\"",
+    "start:dev": "electron dist/angular-electron-sample/shell.js",
+    "start:prod": "electron dist/angular-electron-sample/main.js",
     "build": "ng build",
-    "build:electron": "ng build -c=electron --optimization --outputHashing=all --sourceMap=false --extractCss --namedChunks=false --extractLicenses --vendorChunk=false --buildOptimizer && webpack --config webpack.electron.prod.config.js",
+    "build:dev": "concurrently \"ng build -c=electron --delete-output-path=false --watch\" \"webpack --config webpack.electron.dev.config.js --watch\"",
+    "build:prod": "ng build -c=electron --optimization --outputHashing=all --sourceMap=false --extractCss --namedChunks=false --extractLicenses --vendorChunk=false --buildOptimizer && webpack --config webpack.electron.prod.config.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

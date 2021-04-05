@@ -31,5 +31,6 @@ npm run start
 For the desktop version run:
 
 ```sh
-npm run start:electron
+npm run build:dev
+npm run start:dev
 ```
