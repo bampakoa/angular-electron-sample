@@ -24,17 +24,9 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    noEmitOnErrors: true
-  },
   plugins: [
     new ProgressPlugin()
   ],
-  // set to false any Node.js globals that we use in the Electron code
-  node: {
-    fs: false,
-    __dirname: false
-  },
   // indicates that transpilation code is to be run in the main process
   target: 'electron-main'
 };
