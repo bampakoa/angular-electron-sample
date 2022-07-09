@@ -8,7 +8,7 @@ import { PirateService } from './pirate.service';
 })
 export class AppComponent {
   title = 'angular-electron-sample';
-  pirates: string[];
+  pirates: string[] = [];
 
   constructor(private pirateService: PirateService) {}
 
