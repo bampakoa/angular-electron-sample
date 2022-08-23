@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ElectronService } from 'ngx-electron';
+import { ElectronService } from 'ngx-electronyzer';
 
 @Injectable()
 export class PirateLocalService {
@@ -13,5 +13,5 @@ export class PirateLocalService {
   selectPirate(name: string) {
     this.electronService.ipcRenderer.sendSync('selectPirate', name);
   }
-  
+
 }

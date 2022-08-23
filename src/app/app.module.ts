@@ -1,12 +1,12 @@
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { ElectronService, NgxElectronModule } from 'ngx-electron';
+import { BrowserModule } from '@angular/platform-browser';
+import { ElectronService } from 'ngx-electronyzer';
 
-import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
-import { PirateService } from './pirate.service';
+import { AppComponent } from './app.component';
 import { PirateLocalService } from './pirate-local.service';
+import { PirateService } from './pirate.service';
 
 const pirateFactory = (http: HttpClient, electron: ElectronService) => {
   return !environment.desktop ? new PirateService(http) : new PirateLocalService(electron);
@@ -18,8 +18,7 @@ const pirateFactory = (http: HttpClient, electron: ElectronService) => {
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    NgxElectronModule
+    HttpClientModule
   ],
   providers: [
     { provide: PirateService, useFactory: pirateFactory, deps: [HttpClient, ElectronService] },
